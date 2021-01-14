@@ -5,6 +5,7 @@ const express = require('express');
 const hbs = require('hbs');
 
 var app = express();
+const port = process.env.PORT || 3000;
 //Here you can see how actually "path" which is node core module is working
 // console.log(__dirname);
 // console.log(path.join(__dirname, '..'));
@@ -97,6 +98,6 @@ app.get('*', (req, res)=>{
         errorMsg: "Page not found"
     });
 })
-app.listen(3000, ()=>{
-    console.log("Server started at port 3000");
+app.listen(port, ()=>{
+    console.log("Server started at port "+port);
 })
